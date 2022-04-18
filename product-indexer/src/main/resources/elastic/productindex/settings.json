@@ -1,0 +1,55 @@
+{
+  "index": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "refresh_interval": "500ms",
+    "similarity": {
+      "default": {
+        "type": "boolean"
+      }
+    }
+  },
+  "analysis": {
+    "filter": {
+      "shingle_filter": {
+        "max_shingle_size": "4",
+        "min_shingle_size": "2",
+        "output_unigrams": "false",
+        "type": "shingle"
+      },
+      "en_light_stemming": {
+        "name": "light_english",
+        "type": "stemmer"
+      }
+    },
+    "char_filter": {
+      "brackets_and_commas_char_filter": {
+        "pattern": "[(),\\[\\]]",
+        "type": "pattern_replace",
+        "replacement": ""
+      }
+    },
+    "analyzer": {
+      "shingle_analyzer": {
+        "filter": [
+          "asciifolding",
+          "lowercase",
+          "en_light_stemming",
+          "shingle_filter",
+          "unique"
+        ],
+        "type": "custom",
+        "tokenizer": "standard"
+      },
+      "text_analyzer": {
+        "filter": [
+          "asciifolding",
+          "lowercase",
+          "en_light_stemming"
+        ],
+        "type": "custom",
+        "tokenizer": "standard"
+      }
+    }
+  }
+}

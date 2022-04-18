@@ -1,0 +1,66 @@
+{
+  "properties": {
+    "brand": {
+      "type": "keyword",
+      "doc_values": true,
+      "fields": {
+        "shingles": {
+          "type": "text",
+          "index_options": "docs",
+          "norms": true,
+          "analyzer": "shingle_analyzer"
+        },
+        "text": {
+          "type": "text",
+          "analyzer": "text_analyzer",
+          "index_options": "docs",
+          "norms": true
+        }
+      }
+    },
+    "name": {
+      "type": "text",
+      "analyzer": "text_analyzer",
+      "index_options": "docs",
+      "norms": true,
+      "fields": {
+        "shingles": {
+          "type": "text",
+          "index_options": "docs",
+          "norms": true,
+          "analyzer": "shingle_analyzer"
+        }
+      }
+    },
+    "price": {
+      "type": "float",
+      "doc_values": true
+    },
+    "skus": {
+      "type": "nested",
+      "properties": {
+        "color": {
+          "type": "keyword",
+          "fields": {
+            "text": {
+              "type": "text",
+              "norms": true,
+              "analyzer": "text_analyzer"
+            }
+          }
+        },
+        "size": {
+          "type": "keyword",
+          "fields": {
+            "text": {
+              "type": "text",
+              "index_options": "docs",
+              "norms": true,
+              "analyzer": "text_analyzer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

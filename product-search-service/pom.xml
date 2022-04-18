@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>es-graduation-project</artifactId>
+        <groupId>com.griddynamics</groupId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>product-search-service</artifactId>
+
+    <properties>
+        <elastic.transport.client.version>7.2.1</elastic.transport.client.version>
+        <commons.io.version>2.6</commons.io.version>
+        <!--<logstash.logback.encoder.version>5.2</logstash.logback.encoder.version>-->
+        <commons.lang.version>3.7</commons.lang.version>
+        <!--<commons.collections4.version>4.2</commons.collections4.version>-->
+        <lombok.version>1.18.4</lombok.version>
+
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <packaging>jar</packaging>
+
+
+</project>

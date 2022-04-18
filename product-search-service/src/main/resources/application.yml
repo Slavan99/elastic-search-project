@@ -1,0 +1,5 @@
+com.griddynamics.product.search.service:
+  esHost: http://localhost:9200
+  user:
+  pass:
+  index: product_index

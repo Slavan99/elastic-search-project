@@ -1,0 +1,24 @@
+{
+  "index": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "refresh_interval": "500ms",
+    "similarity": {
+      "default": {
+        "type": "boolean"
+      }
+    }
+  },
+  "analysis": {
+    "analyzer": {
+      "text_default": {
+        "type": "custom",
+        "tokenizer": "standard",
+        "filter": [
+          "lowercase",
+          "asciifolding"
+        ]
+      }
+    }
+  }
+}
